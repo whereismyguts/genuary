@@ -1,4 +1,4 @@
-from turtle import color
+
 import pyxel
 import random
 import time
