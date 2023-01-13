@@ -25,6 +25,7 @@ def dark_color(color):
 
 class App():
     _cells = dict()
+    chaos_mode = False
 
     def cells(self, x, y):
         index = (int(x), int(y))
@@ -47,7 +48,11 @@ class App():
         pyxel.run(self.update, self.draw, )
 
     def update(self):
+        if pyxel.btnp(pyxel.KEY_Q):
 
+            pyxel.quit()
+        if pyxel.btnp(pyxel.KEY_C):
+            self.chaos_mode = not self.chaos_mode
         for c in self._cells.values():
             bevel = c['bevel']
 
@@ -76,8 +81,8 @@ class App():
         ), 0)
 
     def draw(self):
-
-        pyxel.cls(BACKGROUND_COLOR)
+        if not self.chaos_mode:
+            pyxel.cls(BACKGROUND_COLOR)
         # for i in range(0, SCREEN_WIDTH, 1.5*a):
         j = 0
         j_is_odd = False
