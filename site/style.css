@@ -31,16 +31,19 @@ p{
 
     font-size: large;
     padding: 10px
+
     
 }
 
 a:hover {
+    transition: 1s ease-out;
     color: #abdf97;
     background-color: dimgray;
-    border-radius: 118px;
+    
 }
 
 a {
+    border-radius: 118px;
     display: block;
     margin-top: 20px;
     margin-bottom: 50px;
